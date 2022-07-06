@@ -1,177 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/static/images/buba.jpg">
+{% extends 'main/base.html' %}
+{% load static %}
 
-    <title>Blog Template for Bootstrap</title>
+<!--- this block specifically styles this page --->
+{% block style %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="/static/bootstrap3/dist/css/bootstrap.min.css" rel="stylesheet">
+{% endblock %}
 
-    <!-- Custom styles for this template -->
-    <link href="/static/blog.css" rel="stylesheet">
+<!---- this block handles the overall structure of different pages --->
+{% block container %}
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/static/bootstrap3/docs/assets/js/ie-emulation-modes-warning.js"></script>
+<div class="container">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+  <div class="blog-header">
+    <h1 class="blog-title">Information is Key </h1>
+    <p class="lead blog-description">We are going to look deep on how informaton is power.</p>
+  </div>
 
-  <body>
+  <div class="row">
 
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="#">About</a>
-        </nav>
+    <div class="col-sm-8 blog-main">
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">Theory Of Everything</h2>
+        <p class="blog-post-meta">July 7, 2022 by <a href="#">Nick Goldman</a></p>
+
+        <p>A theory of everything (TOE or TOE/ToE), final theory, ultimate theory, unified field theory or master theory is a hypothetical, singular, all-encompassing, coherent theoretical framework of physics that fully explains and links together all physical aspects of the universe.Finding a theory of everything is one of the major unsolved problems in physics. String theory and M-theory have been proposed as theories of everything. </p>
+        <hr>
+        <p>Over the past few centuries, two theoretical frameworks have been developed that, together, most closely resemble a theory of everything. These two theories upon which all modern physics rests are general relativity and quantum mechanics. General relativity is a theoretical framework that only focuses on gravity for understanding the universe in regions of both large scale and high mass: planets, stars, galaxies, clusters of galaxies etc. On the other hand, quantum mechanics is a theoretical framework that only focuses on the three non-gravitational forces for understanding the universe in regions of both very small scale and low mass: subatomic particles, atoms, molecules, etc. Quantum mechanics successfully implemented the Standard Model that describes the three non-gravitational forces: strong nuclear, weak nuclear, and electromagnetic force – as well as all observed elementary particles.</p>
+        <blockquote>
+          <p>The two theories are considered incompatible in regions of extremely small scale – the Planck scale – such as those that exist within a black hole or during the beginning stages of the universe (i.e., the moment immediately following the Big Bang)</p>
+        </blockquote>
+        <p>To resolve the incompatibility, a theoretical framework revealing a deeper underlying reality, unifying gravity with the other three interactions, must be discovered to harmoniously integrate the realms of general relativity and quantum mechanics into a seamless whole: the theory of everything is a single theory that, in principle, is capable of describing all physical phenomena in this universe </p>
+        <h2>String Theory</h2>
+        <p>In pursuit of this goal, quantum gravity has become one area of active research. One example is string theory, which evolved into a candidate for the theory of everything, but not without drawbacks (most notably, its apparent lack of currently testable predictions) and controversy. String theory posits that at the beginning of the universe (up to 10−43 seconds after the Big Bang), the four fundamental forces were once a single fundamental force. According to string theory, every particle in the universe, at its most ultramicroscopic level (Planck length), consists of varying combinations of vibrating strings (or strands) with preferred patterns of vibration. String theory further claims that it is through these specific oscillatory patterns of strings that a particle of unique mass and force charge is created (that is to say, the electron is a type of string that vibrates one way, while the up quark is a type of string vibrating another way, and so forth).
+
+        String theory/M-theory proposes an additional 6 or 7 dimensions of hyperspace + the 4 common dimensions = 10D or 11D spacetime. </p>
+        
+      </div><!-- /.blog-post -->
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">Brain–computer interface</h2>
+        <p class="blog-post-meta">July 6, 2022 by <a href="#">Nick Goldman</a></p>
+
+        <p>A brain–computer interface (BCI), sometimes called a brain–machine interface (BMI), is a direct communication pathway between the brain's electrical activity and an external device, most commonly a computer or robotic limb. BCIs are often directed at researching, mapping, assisting, augmenting, or repairing human cognitive or sensory-motor functions. Implementations of BCIs range from non-invasive (EEG, MEG, EOG, MRI) and partially invasive (ECoG and endovascular) to invasive (microelectrode array), based on how close electrodes get to brain tissue.</p>
+        <blockquote>
+          <p>Due to the cortical plasticity of the brain, signals from implanted prostheses can, after adaptation, be handled by the brain like natural sensor or effector channels. Following years of animal experimentation, the first neuroprosthetic devices implanted in humans appeared in the mid-1990s.</p>
+        </blockquote>
+        <p>Recently, studies in human-computer interaction via the application of machine learning to statistical temporal features extracted from the frontal lobe (EEG brainwave) data has had high levels of success in classifying mental states (Relaxed, Neutral, Concentrating), mental emotional states (Negative, Neutral, Positive) and thalamocortical dysrhythmia</p>
+        
+      </div><!-- /.blog-post -->
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">Simulation hypothesis</h2>
+        <p class="blog-post-meta">July 7, 2022 by <a href="#">Nick</a></p>
+
+        <p>The simulation hypothesis proposes that all of our existence is a simulated reality, such as a computer simulation which convinces its inhabitants that the simulation is "real".
+
+        <p>The simulation hypothesis bears a close resemblance to various other skeptical scenarios from throughout the history of philosophy. The hypothesis was popularized in its current form by Nick Bostrom. The suggestion that such a hypothesis is compatible with all human perceptual experiences is thought to have significant epistemological consequences in the form of philosophical skepticism. Versions of the hypothesis have also been featured in science fiction, appearing as a central plot device in many stories and films. The hypothesis popularized by Bostrom is very disputed, with, for example, theoretical physicist Sabine Hossenfelder, who called it pseudoscience and cosmologist George F. R. Ellis, who stated that "[the hypothesis] is totally impracticable from a technical viewpoint" and that "protagonists seem to have confused science fiction with science. Late-night pub discussion is not a viable theory." A bigger proposal that builds on this idea is that Earth could be the end of a long stack of simulations. </p>
+      </div><!-- /.blog-post -->
+
+
+    </div><!-- /.blog-main -->
+
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+      <div class="sidebar-module sidebar-module-inset">
+        <h4>About</h4>
+        <p>Nick Oirongo <em> AKA Nick Washington Goldman</em> is a young passionate developer. He is the current CEO of WPH, Wink, Belge, Focus, Texmat, Telespace,Elite-shop and the current Managing Director of Mboni Inc. </p>
       </div>
-    </div>
-
-    <div class="container">
-
-      <div class="blog-header">
-        <h1 class="blog-title">The Bootstrap Blog</h1>
-        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+      <div class="sidebar-module">
+        <h4>Sources</h4>
+        <ol class="list-unstyled">
+          <li><a href="https://en.wikipedia.org">Wikipidia</a></li>
+          
+        </ol>
       </div>
+      <div class="sidebar-module">
+        <h4>Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="https://github.com/niwago71">GitHub</a></li>
+          <li><a href="https://twitter.com/Nick_wa_goldman">Twitter</a></li>
+          <li><a href="https://www.facebook.com/NickGoldman">Facebook</a></li>
+        </ol>
+      </div>
+    </div><!-- /.blog-sidebar -->
 
-      <div class="row">
+  </div><!-- /.row -->
 
-        <div class="col-sm-8 blog-main">
+</div><!-- /.container -->
+{% endblock %}
 
-          <div class="blog-post">
-            <h2 class="blog-post-title">Sample blog post</h2>
-            <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+<!---- this block handle the manipulation of footer on diferent  pages -->
 
-            <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-            <hr>
-            <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-            <blockquote>
-              <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            </blockquote>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <h2>Heading</h2>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <pre><code>Example code block</code></pre>
-            <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-            <h3>Sub-heading</h3>
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <ul>
-              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-              <li>Donec id elit non mi porta gravida at eget metus.</li>
-              <li>Nulla vitae elit libero, a pharetra augue.</li>
-            </ul>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-            <ol>
-              <li>Vestibulum id ligula porta felis euismod semper.</li>
-              <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-              <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-            </ol>
-            <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-          </div><!-- /.blog-post -->
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">Another blog post</h2>
-            <p class="blog-post-meta">December 23, 2013 by <a href="#">Jacob</a></p>
-
-            <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-            <blockquote>
-              <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            </blockquote>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-          </div><!-- /.blog-post -->
-
-          <div class="blog-post">
-            <h2 class="blog-post-title">New feature</h2>
-            <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p>
-
-            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <ul>
-              <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-              <li>Donec id elit non mi porta gravida at eget metus.</li>
-              <li>Nulla vitae elit libero, a pharetra augue.</li>
-            </ul>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-          </div><!-- /.blog-post -->
-
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
-
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
-            </ol>
-          </div>
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+{% block footer %}
+<p>Nick Washington Goldman <a href="http://nickgoldman.herokuapp.com">Blogs</a> by <a href="https://twitter.com/Nick_wa_goldman">@Nick_wa_goldman</a>.</p>
+<p>
+<a href="#">Back to top</a>
+</p>
+{% endblock %}

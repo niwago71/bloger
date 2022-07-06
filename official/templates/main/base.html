@@ -1,146 +1,71 @@
-{% load static %}
-{% csrf_token %}
+
 <!DOCTYPE html>
-<html>
-<head>
-    
-    <meta charset="utf-8" name="viewaort" content="width=device-width, initial-scale=1">
-   
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link rel="stylesheet" type="text/css" href="/static/style_1.css">
-    <link href="/static/cover.css" rel="stylesheet" type="text/css">
-    <link href="/static/signin.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/static/bootstrap3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" tyae="text/css" href="/static/fontawsome/css/all.min.css">
-    <link rel="stylesheet" tyae="text/css" href="/static/fontawsome/css/all.min.css">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/images/buba.jpg">
 
-    <title>{% block title %} Vilo {% endblock %}</title>
-    
-</head> 
-<body >
-    <nav class="flex-div" >
-        <div class="nav-left flex-div">
-            {% if logged_in == "True" %}
-            <a class="menu-icon" href ="/home/" style="color:orange;" ><i class="fas fa-th-list" ></i></a>    
-            {% else %}
-            <a class="menu-icon" href ="/" style="color:orange;" ><i class="fas fa-th-list" ></i></a>    
-            {% endif %}
-            <a class="logo" style="color:red;text-decoration: none;"><h2 ><i  class="fab fa-drupal" ></i> VILO</h2></a>
-                
-        </div>
+    <title>Nick Goldman</title>
 
-        <div class=" nav-middle flex-div">
-            <div class="search-box flex-div">
-                <form method="POST">
-                    {% csrf_token %}
-                    <input type="text" class="inputs" name="search" id="search" placeholder="Search">
-                    <button name="search_vid" value="search_vid" type="submit" class="btn btn-link"><i class="fas fa-search"></i></button>
+    <!-- Bootstrap core CSS -->
+    <link href="/static/bootstrap3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-                </form>
-            </div>
-            <div class="mic-icon"><i class="fas fa-microphone"></i></div>
-        </div>
+    <!-- Custom styles for this template -->
+    <link href="/static/blog.css" rel="stylesheet">
 
-        <div class="nav-right flex-div">
-            <a><i class="fab fa-simplybuilt" style="text-align: center;"></i></a> 
-            <a><i class="fas fa-th-large" style="text-align: center;"></i></a> 
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/static/bootstrap3/docs/assets/js/ie-emulation-modes-warning.js"></script>
 
-            <div class="dropdown" style="float:left;">
-            <a id="dLabel" style="text-decoration:none;" role="button" data-toggle="dropdown" data-target="dropdown-menu"
-            href="#">
-            <i class="fas fa-cog" id = "dropdown-toggle"></i> 
-            </a>
-            <ul id = "dropdown-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                {% if logged_in == "True" %}
-                <li><a href="/subscription/">subscription</a></li>
-                <li><a href="/bloger/">channels</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="/logout/<str:logged_in>">Logout</a></li>
-                <hr>
-                <li id = "hide"><a href="#" > Close</a></li>
-                {% else %}
-                <li>
-                    <button class="btn btn-link" data-toggle="modal"
-                     id = "model-button-view" data-target="#myModal">
-                    login
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-                    aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" id="btn-close" class="close"
-                    data-dismiss="modal"  aria-hidden="true">
-                    &times;
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">
-                    Sign In </h4>
-                    </div>
-                        <form class="form-signin" action ="/login/" method="POST">
-                        <div class="modal-body">
-                          
-                                <h2 class="form-signin-heading">Welcome</h2>
-                                <div class="form-group">
-                                <label for="inputEmail" class="sr-only">Email address</label>
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>    
-                                </div>
-                                
-                                <div class="form-group">
-                                <label for="inputPassword" class="sr-only">Password</label>
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>    
-                                </div>
-                               
-                        </div>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <style type="text/css">
+            {% block style %}
 
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-default"
-                        data-dismiss="modal" id= "model-close-button">Close
-                        </button>
-                        <button type="submit" class="btn btn-primary" id="save-changes">
-                        Login
-                        </button>
+            {% endblock %}
 
-                        </div>
-                        </form>
-                    </div><!-- /.modal-content -->
-                    </div><!-- /.modal -->
+        </style>
+  </head>
 
-                </li>
-                <li id = "hide"><a href="#" > Close</a></li>
-                {% endif %}
-            </ul>
-            </div>
+  <body>
 
-            {% if logged_in == "True" %}
-            
-            <img  class="user-icon"  src="/static/images/{{profile_pic}}">
-            
-            {% elif logged_in == None %}
-            <img  class="user-icon" href = "/login" src="/static/cat.jpg">
-            {% endif %}
-        </div>
-    </nav>
-
-    <!-- --------- addons--------------->
-    
-    {% block content %}
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item " href="#">Home</a>
+          <a class="blog-nav-item" href="#">Trending</a>
+          <a class="blog-nav-item" href="#">Technology</a>
+          <a class="blog-nav-item" href="#">Science</a>
+          <a class="blog-nav-item" href="#">About</a>
+        </nav>
+      </div>
+    </div>
+    {% block container %}
 
     {% endblock %}
-    
-    
-<!-- JavaScript Includes -->
-<script src="/static/jquery.min.js"></script>
-<script src="/static/bootstrap3/js/transition.js"></script>
-<script src="/static/bootstrap3/js/modal.js"></script>
-<script src="/static/bootstrap3/js/tooltip.js"></script>
-<script src="/static/bootstrap3/js/popover.js"></script>
-<script src="/static/bootstrap3/js/collapse.js"></script>
-<script type="text/javascript" src="/static/bootstrap3/js/dropdown.js"></script>
-<script type="text/javascript" src="/static/fontawsome/js/fontawesome.min.js"></script>
-<script language="javascript" type="text/javascript" src="/static/play.js"></script>
-<script language="javascript" type="text/javascript" src="/static/update_channel.js"></script>
-<script language="javascript" type="text/javascript" src="/static/base.js"></script>
-    
-</body>
+    <footer class="blog-footer">
+        {% block footer %}
+        
+        {% endblock %}
+      
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
