@@ -1,0 +1,146 @@
+{% load static %}
+{% csrf_token %}
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" name="viewaort" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/style_1.css">
+    <link href="/static/cover.css" rel="stylesheet" type="text/css">
+    <link href="/static/signin.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" tyae="text/css" href="/static/fontawsome/css/all.min.css">
+    <link rel="stylesheet" tyae="text/css" href="/static/fontawsome/css/all.min.css">
+
+    <title>{% block title %} Vilo {% endblock %}</title>
+    
+</head> 
+<body >
+    <nav class="flex-div" >
+        <div class="nav-left flex-div">
+            {% if logged_in == "True" %}
+            <a class="menu-icon" href ="/home/" style="color:orange;" ><i class="fas fa-th-list" ></i></a>    
+            {% else %}
+            <a class="menu-icon" href ="/" style="color:orange;" ><i class="fas fa-th-list" ></i></a>    
+            {% endif %}
+            <a class="logo" style="color:red;text-decoration: none;"><h2 ><i  class="fab fa-drupal" ></i> VILO</h2></a>
+                
+        </div>
+
+        <div class=" nav-middle flex-div">
+            <div class="search-box flex-div">
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="text" class="inputs" name="search" id="search" placeholder="Search">
+                    <button name="search_vid" value="search_vid" type="submit" class="btn btn-link"><i class="fas fa-search"></i></button>
+
+                </form>
+            </div>
+            <div class="mic-icon"><i class="fas fa-microphone"></i></div>
+        </div>
+
+        <div class="nav-right flex-div">
+            <a><i class="fab fa-simplybuilt" style="text-align: center;"></i></a> 
+            <a><i class="fas fa-th-large" style="text-align: center;"></i></a> 
+
+            <div class="dropdown" style="float:left;">
+            <a id="dLabel" style="text-decoration:none;" role="button" data-toggle="dropdown" data-target="dropdown-menu"
+            href="#">
+            <i class="fas fa-cog" id = "dropdown-toggle"></i> 
+            </a>
+            <ul id = "dropdown-menu" class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                {% if logged_in == "True" %}
+                <li><a href="/subscription/">subscription</a></li>
+                <li><a href="/bloger/">channels</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="/logout/<str:logged_in>">Logout</a></li>
+                <hr>
+                <li id = "hide"><a href="#" > Close</a></li>
+                {% else %}
+                <li>
+                    <button class="btn btn-link" data-toggle="modal"
+                     id = "model-button-view" data-target="#myModal">
+                    login
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                    aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" id="btn-close" class="close"
+                    data-dismiss="modal"  aria-hidden="true">
+                    &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                    Sign In </h4>
+                    </div>
+                        <form class="form-signin" action ="/login/" method="POST">
+                        <div class="modal-body">
+                          
+                                <h2 class="form-signin-heading">Welcome</h2>
+                                <div class="form-group">
+                                <label for="inputEmail" class="sr-only">Email address</label>
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>    
+                                </div>
+                                
+                                <div class="form-group">
+                                <label for="inputPassword" class="sr-only">Password</label>
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>    
+                                </div>
+                               
+                        </div>
+
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default"
+                        data-dismiss="modal" id= "model-close-button">Close
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="save-changes">
+                        Login
+                        </button>
+
+                        </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+
+                </li>
+                <li id = "hide"><a href="#" > Close</a></li>
+                {% endif %}
+            </ul>
+            </div>
+
+            {% if logged_in == "True" %}
+            
+            <img  class="user-icon"  src="/static/images/{{profile_pic}}">
+            
+            {% elif logged_in == None %}
+            <img  class="user-icon" href = "/login" src="/static/cat.jpg">
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- --------- addons--------------->
+    
+    {% block content %}
+
+    {% endblock %}
+    
+    
+<!-- JavaScript Includes -->
+<script src="/static/jquery.min.js"></script>
+<script src="/static/bootstrap3/js/transition.js"></script>
+<script src="/static/bootstrap3/js/modal.js"></script>
+<script src="/static/bootstrap3/js/tooltip.js"></script>
+<script src="/static/bootstrap3/js/popover.js"></script>
+<script src="/static/bootstrap3/js/collapse.js"></script>
+<script type="text/javascript" src="/static/bootstrap3/js/dropdown.js"></script>
+<script type="text/javascript" src="/static/fontawsome/js/fontawesome.min.js"></script>
+<script language="javascript" type="text/javascript" src="/static/play.js"></script>
+<script language="javascript" type="text/javascript" src="/static/update_channel.js"></script>
+<script language="javascript" type="text/javascript" src="/static/base.js"></script>
+    
+</body>
+</html>
